@@ -70,17 +70,17 @@ namespace AdvancedBotCulling
 			cullingHandler.ManualUpdate();
 		}
 
-		[Conditional("DEBUG")]
+#if DEBUG
 		public void ForceCull(bool enabled)
 		{
 			SetMode(enabled ? CullingMode.Hidden : CullingMode.Visible);
 		}
 
-		[Conditional("DEBUG")]
 		public void Restore()
 		{
 			SetMode(CullingMode.Auto);
-		}
+		} 
+#endif
 
 		public void ToggleRenderers()
 		{
